@@ -5,8 +5,9 @@ import java.util.Iterator;
 
 import com.google.common.eventbus.Subscribe;
 import com.vaadin.demo.dashboard.DashboardUI;
-import com.vaadin.demo.dashboard.component.ExampleChart;
+import com.vaadin.demo.dashboard.component.GridChart;
 import com.vaadin.demo.dashboard.component.SparklineChart;
+import com.vaadin.demo.dashboard.component.TableChart;
 import com.vaadin.demo.dashboard.component.TopGrossingMoviesChart;
 import com.vaadin.demo.dashboard.component.TopSixTheatersChart;
 import com.vaadin.demo.dashboard.component.TopTenMoviesTable;
@@ -15,6 +16,8 @@ import com.vaadin.demo.dashboard.domain.DashboardNotification;
 import com.vaadin.demo.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.vaadin.demo.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
 import com.vaadin.demo.dashboard.event.DashboardEventBus;
+import com.vaadin.demo.dashboard.graphic.ExampleChart;
+import com.vaadin.demo.dashboard.graphic.LineChart;
 import com.vaadin.demo.dashboard.view.dashboard.DashboardEdit.DashboardEditListener;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
@@ -171,11 +174,19 @@ public final class DashboardView extends Panel implements View,
         dashboardPanels.addComponent(buildPopularMovies());
         
         dashboardPanels.addComponent(buildChartExample());
+        dashboardPanels.addComponent(buildGridChart());
+        dashboardPanels.addComponent(createContentWrapper(new LineChart()));
+        dashboardPanels.addComponent(createContentWrapper(new TableChart()));
 
         return dashboardPanels;
     }
 
-    private Component buildChartExample() {
+    private Component buildGridChart() {
+		GridChart chartGrid = new GridChart();
+		return createContentWrapper(chartGrid);
+	}
+
+	private Component buildChartExample() {
     	ExampleChart exampleChart = new ExampleChart();
     	exampleChart.setSizeFull();
 		return createContentWrapper(exampleChart);
