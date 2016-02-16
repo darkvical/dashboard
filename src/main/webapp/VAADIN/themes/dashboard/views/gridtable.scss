@@ -1,0 +1,61 @@
+@import "../../valo/valo.scss";
+
+@mixin gridtable {	
+  @include grid-default();  
+  .tblGrid .v-grid-cell{
+  	border-right: 0px !important;
+  	box-shadow: 0px 0px 0px rgba(0,0,0,0) !important;
+  }
+  
+  .tblGrid .v-grid-tablewrapper{
+  	border:0px !important;
+  	background-color: #FFFFFF !important;
+  }
+
+  .tblGrid .v-grid-row-selected > .v-grid-cell{  	
+  	background-color: #e0f6fc;   
+    background-origin: padding-box !important;
+    color: #0d1e23 !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) !important;  
+  }
+  
+  .v-grid-row-selected > td {
+  	background: none !important;
+  }
+  
+  .tblGrid .v-grid-scroller-vertical, .v-grid-scroller-horizontal{
+  	border:0px !important;
+  }  
+  
+  .v-grid-row-selected > .v-grid-cell {
+    background-color: #e2f6fc ;
+    $background-inicio:#e2f6fc;
+    $background-fin:#d4ebf0 ;
+    //@include placom-gradient-importante($background-inicio,$background-fin, v-linear 2%,$background-color ,to bottom); 
+    border-color: #065e92 !important;
+    color: #b6daef !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+  }
+ 
+  .v-grid-cell-focused::before{
+  	border: 0px solid #000 !important;
+  }  
+}
+
+  @mixin grid-default($primary-stylename: v-grid){
+	.#{$primary-stylename}{
+		.v-grid-tablewrapper {
+    		.v-grid-header th {
+    			color: #0065B7;
+    			background: #F4F7F5; 
+    			border-bottom: 1px solid #D4D4D4;
+    			box-shadow: 0 0 0 1px #E5E5E5;
+    			font:{
+				   	style:Stag Sans;
+			       	weight:bold;
+			      	size:12px;
+			    }
+    		}
+    	}
+	}
+  }

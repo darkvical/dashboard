@@ -31,4 +31,6 @@
     <inherits name="com.vaadin.addon.timeline.gwt.TimelineWidgetSet" />
 
     
+
+    <inherits name="de.datenhahn.vaadin.componentrenderer.ComponentRendererWidgetSet" />
 </module>

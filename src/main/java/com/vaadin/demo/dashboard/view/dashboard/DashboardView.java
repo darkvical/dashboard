@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import com.google.common.eventbus.Subscribe;
 import com.vaadin.demo.dashboard.DashboardUI;
+import com.vaadin.demo.dashboard.component.ExmapleGridRendered;
 import com.vaadin.demo.dashboard.component.GridChart;
 import com.vaadin.demo.dashboard.component.SparklineChart;
 import com.vaadin.demo.dashboard.component.TableChart;
@@ -165,18 +166,20 @@ public final class DashboardView extends Panel implements View,
 
     private Component buildContent() {
         dashboardPanels = new CssLayout();
-        dashboardPanels.addStyleName("dashboard-panels");
+//        dashboardPanels.addStyleName("dashboard-panels");
         Responsive.makeResponsive(dashboardPanels);
 
-        dashboardPanels.addComponent(buildTopGrossingMovies());
-        dashboardPanels.addComponent(buildNotes());
-        dashboardPanels.addComponent(buildTop10TitlesByRevenue());
-        dashboardPanels.addComponent(buildPopularMovies());
+//        dashboardPanels.addComponent(buildTopGrossingMovies());
+//        dashboardPanels.addComponent(buildNotes());
+//        dashboardPanels.addComponent(buildTop10TitlesByRevenue());
+//        dashboardPanels.addComponent(buildPopularMovies());
+//        
+//        dashboardPanels.addComponent(buildChartExample());
+//        dashboardPanels.addComponent(buildGridChart());
+//        dashboardPanels.addComponent(createContentWrapper(new LineChart()));
+//        dashboardPanels.addComponent(createContentWrapper(new TableChart()));
         
-        dashboardPanels.addComponent(buildChartExample());
-        dashboardPanels.addComponent(buildGridChart());
-        dashboardPanels.addComponent(createContentWrapper(new LineChart()));
-        dashboardPanels.addComponent(createContentWrapper(new TableChart()));
+        dashboardPanels.addComponent(new ExmapleGridRendered());
 
         return dashboardPanels;
     }

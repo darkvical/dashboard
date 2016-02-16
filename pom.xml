@@ -8,7 +8,7 @@
 
 	<properties>
 		<productionMode>false</productionMode>
-		<vaadin.version>7.5.5</vaadin.version>
+		<vaadin.version>7.6.2</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -25,6 +25,11 @@
 		<repository>
 			<id>sonatype vaadin</id>
 			<url>https://oss.sonatype.org/content/repositories/vaadin/</url>
+		</repository>
+		<repository>
+		   <id>vaadin-prereleases</id>
+		   <name>Vaadin Pre-releases</name>
+		   <url>https://maven.vaadin.com/vaadin-prereleases</url>
 		</repository>
 	</repositories>
 
@@ -155,6 +160,13 @@
 			<artifactId>slf4j-jdk14</artifactId>
 			<version>1.6.4</version>
 		</dependency>
+<!-- 		DEPENDENCIA DE GRID DESPLEGABLE -->
+		<dependency>
+		   <groupId>de.datenhahn.vaadin</groupId>
+		   <artifactId>componentrenderer</artifactId>
+		   <version>0.3.0</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -167,8 +179,8 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>

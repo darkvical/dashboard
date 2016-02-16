@@ -21,7 +21,7 @@ public class LineChart extends Chart {
 		 getConfiguration().setSubTitle(StringUtils.EMPTY);
 		 getConfiguration().getChart().setType(ChartType.LINE);
 		 setWidth("100%");
-	     setHeight("450px");
+	     setHeight("100%");
 	     configurarAxisX(null);
 	     configurarAxisY(null);
 	     cargarChart();
