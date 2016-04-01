@@ -13,3 +13,4 @@ rebel.xml
 *.iml
 .idea/
 
+/bin/

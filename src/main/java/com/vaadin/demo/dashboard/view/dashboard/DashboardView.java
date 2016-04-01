@@ -17,6 +17,7 @@ import com.vaadin.demo.dashboard.domain.DashboardNotification;
 import com.vaadin.demo.dashboard.event.DashboardEvent.CloseOpenWindowsEvent;
 import com.vaadin.demo.dashboard.event.DashboardEvent.NotificationsCountUpdatedEvent;
 import com.vaadin.demo.dashboard.event.DashboardEventBus;
+import com.vaadin.demo.dashboard.graphic.BarGrupoChart;
 import com.vaadin.demo.dashboard.graphic.ExampleChart;
 import com.vaadin.demo.dashboard.graphic.LineChart;
 import com.vaadin.demo.dashboard.view.dashboard.DashboardEdit.DashboardEditListener;
@@ -166,20 +167,21 @@ public final class DashboardView extends Panel implements View,
 
     private Component buildContent() {
         dashboardPanels = new CssLayout();
-//        dashboardPanels.addStyleName("dashboard-panels");
+        dashboardPanels.addStyleName("dashboard-panels");
         Responsive.makeResponsive(dashboardPanels);
 
-//        dashboardPanels.addComponent(buildTopGrossingMovies());
-//        dashboardPanels.addComponent(buildNotes());
-//        dashboardPanels.addComponent(buildTop10TitlesByRevenue());
-//        dashboardPanels.addComponent(buildPopularMovies());
-//        
-//        dashboardPanels.addComponent(buildChartExample());
-//        dashboardPanels.addComponent(buildGridChart());
-//        dashboardPanels.addComponent(createContentWrapper(new LineChart()));
-//        dashboardPanels.addComponent(createContentWrapper(new TableChart()));
+        dashboardPanels.addComponent(buildTopGrossingMovies());
+        dashboardPanels.addComponent(buildNotes());
+        dashboardPanels.addComponent(buildTop10TitlesByRevenue());
+        dashboardPanels.addComponent(buildPopularMovies());
         
-        dashboardPanels.addComponent(new ExmapleGridRendered());
+        dashboardPanels.addComponent(buildChartExample());
+        dashboardPanels.addComponent(buildGridChart());
+        dashboardPanels.addComponent(createContentWrapper(new LineChart()));
+        dashboardPanels.addComponent(createContentWrapper(new TableChart()));
+        dashboardPanels.addComponent(createContentWrapper(new BarGrupoChart()));
+        
+//        dashboardPanels.addComponent(new ExmapleGridRendered());
 
         return dashboardPanels;
     }
